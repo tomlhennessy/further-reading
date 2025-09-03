@@ -48,7 +48,7 @@ public class HashMapLite<K, V> {
     }
     int i = indexFor(key);
 
-    for (Node<K, V> x = buckets[i]; x!= null; x = x.next) {
+    for (Node<K, V> x = buckets[i]; x != null; x = x.next) {
       if (key.equals(x.key)) {
         V old = x.value;
         x.value = value;
@@ -59,15 +59,15 @@ public class HashMapLite<K, V> {
     buckets[i] = new Node<>(key, value, buckets[i]); // insert at head
     size++;
 
-    if (size >= (int) buckets.length * 0.75) {
+    if (size >= (int) (buckets.length * 0.75)) {
       resize(buckets.length * 2);
     }
     return null;
   }
 
   private void resize(int newCap) {
-    Node<K, V> old = buckets;
-    Node<K, V> fresh = (Node<K, V>[]) new Node[nodeCap];
+    Node<K, V>[] old = buckets;
+    Node<K, V>[] fresh = (Node<K, V>[]) new Node[newCap];
     buckets = fresh;
     int oldSize = size;
     size = 0;
