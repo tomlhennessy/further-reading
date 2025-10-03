@@ -1,5 +1,23 @@
 # Week 2: Hash Tables
 
+1: Good. Hash must be deterministic and spread keys uniformly. Also mention: it should be fast (avoid slow math).
+
+2: Load factor definition → correct. But small refinement: it’s the ratio N/M (entries ÷ buckets). At high load factors:
+
+Separate chaining → lists grow longer (slower lookups).
+
+Linear probing → clustering and long probe chains.
+
+3: Perfect breakdown of memory and cache. Just remember the exact terms:
+
+Separate chaining = extra pointer overhead, scattered.
+
+Linear probing = contiguous, cache friendly.
+
+4: Correct. Failure points are spot-on.
+
+👉 Small fix: clustering doesn’t just “put stress on CPU,” it leads to O(n) probe sequences if not resized in time.
+
 - Purpose: Provide O(1) average time for search/insert/delete by trading extra space
 
 ## Hash Functions:

@@ -1,5 +1,21 @@
 # Linked Lists
 
+1: Correct. Each node = value + pointer.
+
+2: Here’s where we need to adjust:
+
+Insert at head = O(1) ✅
+
+Access by index = ❌ O(n) (not O(1)) → because you must traverse from head each time.
+
+Delete (given pointer to node) = O(1) ✅ But if you’re deleting by value (like your implementation), first you need a traversal = O(n).
+
+3: Correct → poor locality = cache misses.
+
+4: Correct → in practice, ArrayList is almost always faster.
+
+👉 So the big correction: random access in linked lists is O(n), not O(1).
+
 ## Memory Layout
 - Nodes are allocated individually on the heap
 - Each node stores:
